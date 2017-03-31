@@ -22,7 +22,7 @@ kd1 = 0; k1 = 0.6; ki1 = 0;
 N = 400; dt = 0.05;
 t = [i*dt for i in range(N)]
 
-fig  = plt.figure()
+fig  = plt.figure(figsize=(10, 8), dpi=100)
 subplot1 = fig.add_subplot(221)   #left
 subplot2 = fig.add_subplot(222)   #right
 
