@@ -26,9 +26,6 @@ fig  = plt.figure(figsize=(10, 8), dpi=100)
 subplot1 = fig.add_subplot(221)   #left
 subplot2 = fig.add_subplot(222)   #right
 
-xmin = float("inf"); ymin = float("inf");
-xmax = -float("inf"); ymax = -float("inf");
-
 for pp in range(4):
 	ki = ki1 - 0.01*pp
 
@@ -39,20 +36,14 @@ for pp in range(4):
 			k = k1 - 0.1*j
 			x, y = F(N, kd, k, dt, l, l0, m, D, nu, ki)
 
-	subplot1.plot(t, x)
-	subplot2.plot(t, y)
+			subplot1.plot(t, x)
+			subplot2.plot(t, y)
 
-	if xmin > x.min():
-		xmin = x.min()
-	if ymin > y.min():
-		ymin = y.min()
-	if xmax < x.max():
-		xmax = x.max()
-	if ymax < y.max():
-		ymax = y.max()
 
-subplot1.set_ylim(xmin, xmax)
-subplot2.set_ylim(ymin, ymax)
+subplot1.set_ylabel('x')
+subplot2.set_ylabel('dx/dt')
+subplot1.set_xlabel('t')
+subplot2.set_xlabel('t')
 subplot1.grid()
 subplot2.grid()
 plt.show()
